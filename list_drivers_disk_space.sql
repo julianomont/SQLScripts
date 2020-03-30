@@ -2,7 +2,6 @@ DECLARE @svrName VARCHAR(255)
 DECLARE @sql VARCHAR(400)
 DECLARE @output TABLE (line VARCHAR(255))
 
---by default it will take the current server name, we can the SET the server name as well
 
 SET @svrName = @@SERVERNAME 
 IF CHARINDEX ('\', @svrName) > 0
