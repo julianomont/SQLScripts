@@ -14,8 +14,6 @@ SET @sql = 'powershell.exe -c "Get-WmiObject -ComputerName ' + QUOTENAME(@svrNam
 INSERT @output
 EXEC xp_cmdshell @sql
 
---script to retrieve the values in MB FROM PS Script output
-
 SELECT RTRIM(LTRIM(SUBSTRING(line,1,CHARINDEX('|',line) -1))) AS drivename
       ,ROUND(CAST(RTRIM(LTRIM(SUBSTRING(line,CHARINDEX('|',line)+1,
       (CHARINDEX('%',line) -1)-CHARINDEX('|',line)) )) AS FLOAT),0) AS 'capacity(MB)'
