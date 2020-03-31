@@ -2,6 +2,7 @@ DECLARE @svrName VARCHAR(255)
 DECLARE @sql VARCHAR(400)
 DECLARE @output TABLE (line VARCHAR(255))
 
+-- New comment
 
 SET @svrName = @@SERVERNAME 
 IF CHARINDEX ('\', @svrName) > 0
